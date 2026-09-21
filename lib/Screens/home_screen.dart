@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/Screens/result_screen.dart';
 import 'package:bmi_calculator/Widget/custom_buttoms.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             child: Column(
               children: [
-                const SizedBox(height: 20),
+                20.verticalSpace,
 
                 Row(
                   children: [
@@ -47,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
 
                         child: Container(
-                          height: 190,
+                          height: 180.h,
+                          width: 155.w,
 
                           decoration: BoxDecoration(
                             color: const Color(0xff24263B),
@@ -79,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    const SizedBox(width: 10),
+                    10.horizontalSpace,
 
                     Expanded(
                       child: GestureDetector(
@@ -90,7 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
 
                         child: Container(
-                          height: 190,
+                          height: 180.h,
+                          width: 155.w,
 
                           decoration: BoxDecoration(
                             color: const Color(0xff333244),
@@ -124,21 +127,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
 
-                const SizedBox(height: 25),
-
+25.verticalSpace,
                 Container(
-                  height: 190,
+                  height: 210.h,
                   width: double.infinity,
-
                   decoration: BoxDecoration(
                     color: const Color(0xff333244),
                     borderRadius: BorderRadius.circular(12),
                   ),
-
+                
                   child: Column(
                     children: [
-                      const SizedBox(height: 27),
-
+27.verticalSpace,                 
                       const Text(
                         'Height',
                         style: TextStyle(
@@ -147,24 +147,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w300,
                         ),
                       ),
-
-                      const SizedBox(height: 5),
-
+                
+                      5.verticalSpace,
+                
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             height.toInt().toString(),
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 40,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-
-                          const SizedBox(width: 3),
-
-                          const Text(
+                
+                          3.horizontalSpace,
+                
+                          Text(
                             'cm',
                             style: TextStyle(
                               color: Colors.white,
@@ -174,16 +174,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-
-                      const SizedBox(height: 20),
-
+                
+                      20.verticalSpace,
+                
                       Slider(
                         activeColor: Colors.red,
                         thumbColor: Colors.white,
                         value: height,
                         min: 100,
                         max: 250,
-
+                
                         onChanged: (value) {
                           setState(() {
                             height = value;
@@ -194,13 +194,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 30),
+                30.verticalSpace,
 
                 Row(
                   children: [
                     Expanded(
                       child: Container(
-                        height: 190,
+                        height: 190.h,
+                        width: 155.w,
 
                         decoration: BoxDecoration(
                           color: const Color(0xff24263B),
@@ -209,9 +210,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         child: Column(
                           children: [
-                            const SizedBox(height: 15),
+                            15.verticalSpace,
 
-                            const Text(
+                            Text(
                               'Weight',
                               style: TextStyle(
                                 color: Color(0xff8B8C9E),
@@ -220,18 +221,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
 
-                            const SizedBox(height: 5),
+                            5.verticalSpace,
 
                             Text(
                               '$weight',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
 
-                            const SizedBox(height: 20),
+                            20.verticalSpace  ,
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -246,8 +247,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
 
                                   child: Container(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.w,
+                                    height: 50.h,
 
                                     decoration: BoxDecoration(
                                       color: const Color(0xff9293A3),
@@ -278,8 +279,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
 
                                   child: Container(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.w,
+                                    height: 50.h,
 
                                     decoration: BoxDecoration(
                                       color: const Color(0xff9293A3),
@@ -308,11 +309,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    const SizedBox(width: 10),
+                    10.horizontalSpace,
 
                     Expanded(
                       child: Container(
-                        height: 190,
+                        height: 190.h,
+                        width: 155.w,
 
                         decoration: BoxDecoration(
                           color: const Color(0xff333244),
@@ -321,7 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         child: Column(
                           children: [
-                            const SizedBox(height: 15),
+                            15.verticalSpace,
 
                             const Text(
                               'Age',
@@ -332,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
 
-                            const SizedBox(height: 5),
+                            5.verticalSpace,
 
                             Text(
                               '$age',
@@ -343,7 +345,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
 
-                            const SizedBox(height: 20),
+                            20.verticalSpace,
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -358,8 +360,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
 
                                   child: Container(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.w,
+                                    height: 50.h,
 
                                     decoration: BoxDecoration(
                                       color: const Color(0xff9293A3),
@@ -390,8 +392,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
 
                                   child: Container(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.w,
+                                    height: 50.h,
 
                                     decoration: BoxDecoration(
                                       color: const Color(0xff9293A3),
@@ -422,7 +424,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
 
-                const SizedBox(height: 30),
+                30.verticalSpace,
 
                 CustomButtom(
                   text: 'Calculate',

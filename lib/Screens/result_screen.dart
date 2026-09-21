@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/Screens/home_screen.dart';
 import 'package:bmi_calculator/Widget/custom_buttoms.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ResultScreen extends StatefulWidget {
   final double bmi;
@@ -62,97 +63,93 @@ class _ResultScreenState extends State<ResultScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22),
 
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: [
-              const SizedBox(height: 25),
-
-              const Text(
-                'Your Result',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+            
+              children: [
+            25.verticalSpace,
+                const Text(
+                  'Your Result',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-
-              const SizedBox(height: 25),
-
-              Container(
-                height: 503,
-                width: double.infinity,
-
-                decoration: BoxDecoration(
-                  color: const Color(0xff333244),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-
-                child: Column(
-                  children: [
-                    const SizedBox(height: 58),
-
-                    // Normal / Underweight / Overweight / Obese
-                    Text(
-                      resultText,
-                      style: TextStyle(
-                        color: resultColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
+            
+            25.verticalSpace,
+                Container(
+                  height: 503.h,
+width: double.infinity,            
+                  decoration: BoxDecoration(
+                    color: const Color(0xff333244),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+            
+                  child: Column(
+                    children: [
+                      58.verticalSpace,
+            
+                      Text(
+                        resultText,
+                        style: TextStyle(
+                          color: resultColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-
-                    const SizedBox(height: 25),
-
-                    // BMI Number
-                    Text(
-                      widget.bmi.toStringAsFixed(1),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 48,
-                        fontWeight: FontWeight.w700,
+            
+                      25.verticalSpace,
+            
+                      Text(
+                        widget.bmi.toStringAsFixed(1),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 48,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-
-                    const SizedBox(height: 120),
-
-                    // Description
-                    Text(
-                      description,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff8B8C9E),
+            
+                      120.verticalSpace,
+            
+                      Text(
+                        description,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff8B8C9E),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-
-              const SizedBox(height: 50),
-
-              CustomButtom(
-                text: 'Re - Calculate',
-
-                ontap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
-                  );
-                },
-
-                color: const Color(0xffE83D67),
-
-                textcolor: Colors.white,
-
-                textStyle: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
+            
+                50.verticalSpace,
+            
+                CustomButtom(
+                  text: 'Re - Calculate',
+            
+                  ontap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    );
+                  },
+            
+                  color: const Color(0xffE83D67),
+            
+                  textcolor: Colors.white,
+            
+                  textStyle: const TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
